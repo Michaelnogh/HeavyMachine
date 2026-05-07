@@ -53,6 +53,4 @@ def get_machine(machine_id):
 
 
 if __name__ == "__main__":
-    # Bind to 0.0.0.0 so Flask is reachable from Nginx (and directly if needed).
-    # debug=False for production on EC2.
-    app.run(host="0.0.0.0", port=8000, debug=False)
+    app.run(host="0.0.0.0", port=8000, debug=True)
