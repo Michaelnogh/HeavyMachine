@@ -1,0 +1,275 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >
+  Main VPC — 2 public, 2 private-app, 2 private-data subnets across
+  us-east-1a and us-east-1b. Single NAT Gateway in us-east-1a.
+
+# ── Parameters ──────────────────────────────────────────────────────────────
+Parameters:
+  VpcCidr:
+    Type: String
+    Default: "10.0.0.0/16"
+
+  PublicSubnet1Cidr:
+    Type: String
+    Default: "10.0.1.0/24"
+
+  PublicSubnet2Cidr:
+    Type: String
+    Default: "10.0.2.0/24"
+
+  AppSubnet1Cidr:
+    Type: String
+    Default: "10.0.11.0/24"
+
+  AppSubnet2Cidr:
+    Type: String
+    Default: "10.0.12.0/24"
+
+  DataSubnet1Cidr:
+    Type: String
+    Default: "10.0.21.0/24"
+
+  DataSubnet2Cidr:
+    Type: String
+    Default: "10.0.22.0/24"
+
+# ── Resources ────────────────────────────────────────────────────────────────
+Resources:
+
+  # ── VPC ────────────────────────────────────────────────────────────────────
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: !Ref VpcCidr
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: main-vpc
+
+  # ── Internet Gateway ───────────────────────────────────────────────────────
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: main-igw
+
+  IGWAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref VPC
+      InternetGatewayId: !Ref InternetGateway
+
+  # ── Public Subnets ─────────────────────────────────────────────────────────
+  PublicSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: !Ref PublicSubnet1Cidr
+      AvailabilityZone: us-east-1a
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: public-1a
+
+  PublicSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: !Ref PublicSubnet2Cidr
+      AvailabilityZone: us-east-1b
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: public-1b
+
+  # ── Private App Subnets ────────────────────────────────────────────────────
+  AppSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: !Ref AppSubnet1Cidr
+      AvailabilityZone: us-east-1a
+      Tags:
+        - Key: Name
+          Value: app-1a
+
+  AppSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: !Ref AppSubnet2Cidr
+      AvailabilityZone: us-east-1b
+      Tags:
+        - Key: Name
+          Value: app-1b
+
+  # ── Private Data Subnets ───────────────────────────────────────────────────
+  DataSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: !Ref DataSubnet1Cidr
+      AvailabilityZone: us-east-1a
+      Tags:
+        - Key: Name
+          Value: data-1a
+
+  DataSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: !Ref DataSubnet2Cidr
+      AvailabilityZone: us-east-1b
+      Tags:
+        - Key: Name
+          Value: data-1b
+
+  # ── NAT Gateway (single AZ — us-east-1a) ──────────────────────────────────
+  NatEIP:
+    Type: AWS::EC2::EIP
+    DependsOn: IGWAttachment
+    Properties:
+      Domain: vpc
+      Tags:
+        - Key: Name
+          Value: nat-eip
+
+  NatGateway:
+    Type: AWS::EC2::NatGateway
+    Properties:
+      AllocationId: !GetAtt NatEIP.AllocationId
+      SubnetId: !Ref PublicSubnet1        # placed in us-east-1a public subnet
+      Tags:
+        - Key: Name
+          Value: nat-gw-1a
+
+  # ── Route Table: Public ────────────────────────────────────────────────────
+  PublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref VPC
+      Tags:
+        - Key: Name
+          Value: rt-public
+
+  PublicDefaultRoute:
+    Type: AWS::EC2::Route
+    DependsOn: IGWAttachment
+    Properties:
+      RouteTableId: !Ref PublicRouteTable
+      DestinationCidrBlock: "0.0.0.0/0"
+      GatewayId: !Ref InternetGateway
+
+  PublicSubnet1RTAssoc:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref PublicSubnet1
+      RouteTableId: !Ref PublicRouteTable
+
+  PublicSubnet2RTAssoc:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref PublicSubnet2
+      RouteTableId: !Ref PublicRouteTable
+
+  # ── Route Table: Private App (both AZs share the single NAT) ──────────────
+  AppRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref VPC
+      Tags:
+        - Key: Name
+          Value: rt-app-private
+
+  AppDefaultRoute:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId: !Ref AppRouteTable
+      DestinationCidrBlock: "0.0.0.0/0"
+      NatGatewayId: !Ref NatGateway
+
+  AppSubnet1RTAssoc:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref AppSubnet1
+      RouteTableId: !Ref AppRouteTable
+
+  AppSubnet2RTAssoc:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref AppSubnet2
+      RouteTableId: !Ref AppRouteTable
+
+  # ── Route Table: Private Data (no internet route) ─────────────────────────
+  DataRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref VPC
+      Tags:
+        - Key: Name
+          Value: rt-data-private
+
+  DataSubnet1RTAssoc:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref DataSubnet1
+      RouteTableId: !Ref DataRouteTable
+
+  DataSubnet2RTAssoc:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref DataSubnet2
+      RouteTableId: !Ref DataRouteTable
+
+# ── Outputs ──────────────────────────────────────────────────────────────────
+Outputs:
+
+  VpcId:
+    Description: VPC ID
+    Value: !Ref VPC
+    Export:
+      Name: main-vpc-id
+
+  PublicSubnet1Id:
+    Description: Public Subnet us-east-1a
+    Value: !Ref PublicSubnet1
+    Export:
+      Name: main-vpc-public-subnet-1a
+
+  PublicSubnet2Id:
+    Description: Public Subnet us-east-1b
+    Value: !Ref PublicSubnet2
+    Export:
+      Name: main-vpc-public-subnet-1b
+
+  AppSubnet1Id:
+    Description: Private App Subnet us-east-1a
+    Value: !Ref AppSubnet1
+    Export:
+      Name: main-vpc-app-subnet-1a
+
+  AppSubnet2Id:
+    Description: Private App Subnet us-east-1b
+    Value: !Ref AppSubnet2
+    Export:
+      Name: main-vpc-app-subnet-1b
+
+  DataSubnet1Id:
+    Description: Private Data Subnet us-east-1a
+    Value: !Ref DataSubnet1
+    Export:
+      Name: main-vpc-data-subnet-1a
+
+  DataSubnet2Id:
+    Description: Private Data Subnet us-east-1b
+    Value: !Ref DataSubnet2
+    Export:
+      Name: main-vpc-data-subnet-1b
+
+  NatGatewayId:
+    Description: NAT Gateway ID (us-east-1a)
+    Value: !Ref NatGateway
+    Export:
+      Name: main-vpc-nat-gw

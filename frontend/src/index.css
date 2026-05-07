@@ -1,0 +1,35 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cat-yellow: #F4A820;
+  --cat-yellow-dark: #d48f10;
+  --cat-black: #1A1A1A;
+  --cat-dark: #222222;
+  --cat-gray: #3a3a3a;
+  --cat-light-gray: #f5f5f5;
+  --cat-border: #e0e0e0;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --radius: 10px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.10);
+  --shadow-hover: 0 6px 24px rgba(0,0,0,0.16);
+}
+
+html {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--cat-light-gray);
+  color: var(--text-primary);
+}
+
+body {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}

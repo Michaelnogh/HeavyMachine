@@ -1,0 +1,66 @@
+.header {
+  background: var(--cat-black);
+  border-bottom: 4px solid var(--cat-yellow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoIcon {
+  font-size: 2rem;
+  color: var(--cat-yellow);
+  line-height: 1;
+}
+
+.logoTitle {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.logoSub {
+  display: block;
+  font-size: 0.72rem;
+  color: #aaa;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.brand {
+  text-align: right;
+}
+
+.brandBadge {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--cat-yellow);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.brandSub {
+  display: block;
+  font-size: 0.7rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}

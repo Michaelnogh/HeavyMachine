@@ -1,0 +1,31 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.even {
+  background: #f9f9f9;
+}
+
+.odd {
+  background: #fff;
+}
+
+.label {
+  padding: 9px 14px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  width: 48%;
+  border-bottom: 1px solid #f0f0f0;
+  white-space: nowrap;
+}
+
+.value {
+  padding: 9px 14px;
+  color: var(--cat-black);
+  font-weight: 500;
+  border-bottom: 1px solid #f0f0f0;
+}
