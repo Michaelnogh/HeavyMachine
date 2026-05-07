@@ -3,7 +3,9 @@ from flask_cors import CORS
 from machines_data import MACHINES
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:5173"])
+# Allow all origins — Nginx sits in front on EC2 so the API is
+# reachable from the same host. Wildcard keeps it open for any setup.
+CORS(app, origins="*")
 
 # Build sorted category list from the data once at startup
 CATEGORIES = sorted({m["category"] for m in MACHINES})
@@ -51,4 +53,6 @@ def get_machine(machine_id):
 
 
 if __name__ == "__main__":
-    app.run(port=8000, debug=True)
+    # Bind to 0.0.0.0 so Flask is reachable from Nginx (and directly if needed).
+    # debug=False for production on EC2.
+    app.run(host="0.0.0.0", port=8000, debug=False)
