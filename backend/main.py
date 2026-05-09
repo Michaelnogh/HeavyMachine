@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+from asgiref.wsgi import WsgiToAsgi
 from machines_data import MACHINES
 
 app = Flask(__name__)
@@ -52,5 +53,12 @@ def get_machine(machine_id):
     return jsonify({"error": "Machine not found"}), 404
 
 
+# ── ASGI entry point ────────────────────────────────────────────────────────
+# Flask is a WSGI app; this wrapper exposes it as ASGI so Uvicorn can serve it.
+# Uvicorn imports this object as `main:asgi_app`.
+asgi_app = WsgiToAsgi(app)
+
+
 if __name__ == "__main__":
+    # Direct `python3 main.py` still works (Flask's built-in dev server).
     app.run(host="0.0.0.0", port=8000, debug=True)
