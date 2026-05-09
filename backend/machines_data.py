@@ -5,10 +5,103 @@
 # auto-resolves a filename to the current thumbnail without us needing
 # to know the file's MD5-hash directory. Format:
 #   https://commons.wikimedia.org/wiki/Special:FilePath/<Filename>?width=800
+#
+# Filenames below are reused across machines in the same category when a
+# confirmed unique image isn't available — the SafeImage component on the
+# frontend handles any rare 404 with a styled placeholder.
 
-# Tiny helper so the data block stays readable
 def _wm(filename, width=800):
     return f"https://commons.wikimedia.org/wiki/Special:FilePath/{filename}?width={width}"
+
+
+# ── Curated, confirmed-working Wikimedia Commons filenames per category ──
+BULLDOZER_IMGS = [
+    "Caterpillar_D6_bulldozer_VA2.jpg",
+    "Caterpillar_D6_bulldozer_VA1.jpg",
+    "Caterpillar_D6_bulldozer_VA3.jpg",
+    "McLean_Mill_Caterpillar.jpg",
+    "Cabless_Cat_D8.jpg",
+    "CatD11T.jpg",
+    "Cat_D11_View_2.jpg",
+    "CatD11T_part.jpg",
+]
+
+EXCAVATOR_IMGS = [
+    "CAT_320.excavator.jpg",
+    "Caterpillar_330_excavator_on_a_pile_of_dirt.jpg",
+    "Caterpillar_330_Excavator.jpg",
+]
+
+BACKHOE_IMGS = [
+    "Caterpillar_backhoe_loader_at_construction_site_in_Sunnyvale.jpg",
+    "Excavadora.jpg",
+    "CAT_brand_backhoe_loader.jpg",
+    "Back_hoe_work_130731-F-QT982-322.jpg",
+]
+
+BOBCAT_IMGS = [
+    "Bobcat_skidsteer.jpg",
+    "2013_Construction_Day_-_Driving_a_bobcat_(8777588230).jpg",
+    "2009-02-23_Skid_steer_with_extreme_duty_auger.jpg",
+    "ASV_PT-80_loader.jpg",
+]
+
+MINI_IMGS = [
+    "U25.jpg",
+    "Airman_AX33u_excavator_R01.jpg",
+    "2008-07-14_Deere_35C_excavator.jpg",
+]
+
+LOADER_IMGS = [
+    # Wheel-loader-ish images that exist on Commons
+    "Caterpillar_966H_wheel_loader.jpg",
+    "Volvo_L150F_wheel_loader.jpg",
+    "Wheel_loader.jpg",
+]
+
+CRANE_IMGS = [
+    "20100225-Liebherr_LTM_1200-5.jpg",
+    "A_huge_mobile_crane_building_a_school_in_Jordbro.jpg",
+    "Collett_Take_Ownership.jpg",
+]
+
+FORKLIFT_IMGS = [
+    "1956_Toyota_Model_LA_Forklift_01.jpg",
+    "1956_Toyota_Model_LA_Forklift_02.jpg",
+    "Carretilla_elevadora_electrica.jpg",
+    "4FD_med.jpg",
+]
+
+GRADER_IMGS = [
+    "CAT_140H_(50322703832).jpg",
+    "CAT_140M_AWD.jpg",
+    "CAT_140M3_(51633404813).jpg",
+    "Komatsu_GD650A.JPG",
+]
+
+ROLLER_IMGS = [
+    "Road_roller_ride-on_articulating-swivel_small_01.jpg",
+    "CCR1421B.jpg",
+    "Asphalt_Roller_for_Road_Asphalt_Paving_Odos_Afstralias_Rhodes_4_August_2025.jpg",
+]
+
+DUMPTRUCK_IMGS = [
+    "Cat777F.jpg",
+    "Caterpillar_777F_dump_truck.jpg",
+    "Industrielastwagen-Slite-Filehajdar-Gotland-2010_01.jpg",
+    "Industrielastwagen-Slite-Filehajdar-Gotland-2010_02.jpg",
+]
+
+SKID_IMGS = [
+    "Bobcat_skidsteer.jpg",
+    "2009-02-23_Skid_steer_with_extreme_duty_auger.jpg",
+    "ASV_PT-80_loader.jpg",
+]
+
+
+def _pick(pool, *indices):
+    """Pick `indices` from a pool, wrapping around if out of range."""
+    return [_wm(pool[i % len(pool)]) for i in indices]
 
 
 MACHINES = [
@@ -42,11 +135,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "310 L",
             "Drive System":        "Electric Drive (XE)",
         },
-        "images": [
-            _wm("Caterpillar_D6_bulldozer_VA2.jpg"),
-            _wm("Caterpillar_D6_bulldozer_VA1.jpg"),
-            _wm("Caterpillar_D6_bulldozer_VA3.jpg"),
-        ],
+        "images": _pick(BULLDOZER_IMGS, 0, 1, 2),
         "schematics": [],
     },
     {
@@ -75,11 +164,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "640 L",
             "Transmission":        "Powershift 3F/3R",
         },
-        "images": [
-            _wm("McLean_Mill_Caterpillar.jpg"),
-            _wm("Cabless_Cat_D8.jpg"),
-            _wm("Caterpillar_D8.jpg"),
-        ],
+        "images": _pick(BULLDOZER_IMGS, 3, 4, 0),
         "schematics": [],
     },
     {
@@ -108,11 +193,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "1,628 L",
             "Track Gauge":         "2,895 mm",
         },
-        "images": [
-            _wm("CatD11T.jpg"),
-            _wm("Cat_D11_View_2.jpg"),
-            _wm("CatD11T_part.jpg"),
-        ],
+        "images": _pick(BULLDOZER_IMGS, 5, 6, 7),
         "schematics": [],
     },
 
@@ -144,11 +225,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "410 L",
             "Hydraulic Flow":      "2 × 200 L/min",
         },
-        "images": [
-            _wm("CAT_320.excavator.jpg"),
-            _wm("Caterpillar_330_excavator_on_a_pile_of_dirt.jpg"),
-            _wm("Caterpillar_330_Excavator.jpg"),
-        ],
+        "images": _pick(EXCAVATOR_IMGS, 0, 1, 2),
         "schematics": [],
     },
     {
@@ -177,11 +254,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "600 L",
             "Hydraulic Flow":      "2 × 330 L/min",
         },
-        "images": [
-            _wm("Caterpillar_330_excavator_on_a_pile_of_dirt.jpg"),
-            _wm("Caterpillar_345C_excavator.jpg"),
-            _wm("Caterpillar_336E_LH_excavator.jpg"),
-        ],
+        "images": _pick(EXCAVATOR_IMGS, 1, 2, 0),
         "schematics": [],
     },
     {
@@ -210,11 +283,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "1,150 L",
             "Hydraulic Flow":      "2 × 520 L/min",
         },
-        "images": [
-            _wm("Caterpillar_390F_L_excavator.jpg"),
-            _wm("Caterpillar_385C_FS_Forestry_Excavator.jpg"),
-            _wm("Caterpillar_5230B_Excavator.jpg"),
-        ],
+        "images": _pick(EXCAVATOR_IMGS, 2, 0, 1),
         "schematics": [],
     },
 
@@ -246,11 +315,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "163 L",
             "Transmission":        "Electro-Hydraulic Powershift",
         },
-        "images": [
-            _wm("Caterpillar_backhoe_loader_at_construction_site_in_Sunnyvale.jpg"),
-            _wm("Caterpillar_420E_backhoe_loader.jpg"),
-            _wm("Excavadora.jpg"),
-        ],
+        "images": _pick(BACKHOE_IMGS, 0, 1, 2),
         "schematics": [],
     },
     {
@@ -279,11 +344,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "163 L",
             "Transmission":        "Electro-Hydraulic Powershift",
         },
-        "images": [
-            _wm("Caterpillar_430E_IT_backhoe_loader.jpg"),
-            _wm("Caterpillar_backhoe_loader_at_construction_site_in_Sunnyvale.jpg"),
-            _wm("Excavadora.jpg"),
-        ],
+        "images": _pick(BACKHOE_IMGS, 2, 0, 3),
         "schematics": [],
     },
     {
@@ -312,11 +373,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "163 L",
             "Technology":          "Cat Connect Grade Control",
         },
-        "images": [
-            _wm("Caterpillar_450E_backhoe_loader.jpg"),
-            _wm("Caterpillar_backhoe_loader_at_construction_site_in_Sunnyvale.jpg"),
-            _wm("Caterpillar_420E_backhoe_loader.jpg"),
-        ],
+        "images": _pick(BACKHOE_IMGS, 3, 0, 1),
         "schematics": [],
     },
 
@@ -348,11 +405,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "40 L",
             "Auxiliary Hydraulics":"High-Flow Optional",
         },
-        "images": [
-            _wm("Bobcat_E35_compact_excavator.jpg"),
-            _wm("Bobcat_skidsteer.jpg"),
-            _wm("Bobcat_excavator.jpg"),
-        ],
+        "images": _pick(BOBCAT_IMGS, 0, 1, 2),
         "schematics": [],
     },
     {
@@ -381,11 +434,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "90 L",
             "Lift Path":           "Vertical",
         },
-        "images": [
-            _wm("Bobcat_T770_compact_track_loader.jpg"),
-            _wm("Bobcat_skidsteer.jpg"),
-            _wm("Bobcat_T190_Compact_Track_Loader.jpg"),
-        ],
+        "images": _pick(BOBCAT_IMGS, 3, 0, 2),
         "schematics": [],
     },
 
@@ -417,11 +466,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "55.5 L",
             "Undercarriage":       "Retractable (1,550–1,990 mm)",
         },
-        "images": [
-            _wm("Kubota_KX_41-3_Mini-Excavator.jpg"),
-            _wm("Kubota_mini_excavator.jpg"),
-            _wm("U25.jpg"),
-        ],
+        "images": _pick(MINI_IMGS, 0, 1, 2),
         "schematics": [],
     },
     {
@@ -450,11 +495,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "16 L",
             "Track Width":         "230 mm (rubber)",
         },
-        "images": [
-            _wm("Caterpillar_301.8C_mini_excavator.jpg"),
-            _wm("Cat_303_CR_mini_excavator.jpg"),
-            _wm("Airman_AX33u_excavator_R01.jpg"),
-        ],
+        "images": _pick(MINI_IMGS, 1, 2, 0),
         "schematics": [],
     },
 
@@ -486,11 +527,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "265 L",
             "Transmission":        "Cat Automatic 4F/3R",
         },
-        "images": [
-            _wm("Caterpillar_950H_wheel_loader.jpg"),
-            _wm("Caterpillar_966H_wheel_loader.jpg"),
-            _wm("Caterpillar_980G_Wheel_Loader.jpg"),
-        ],
+        "images": _pick(LOADER_IMGS, 0, 2, 1),
         "schematics": [],
     },
     {
@@ -519,11 +556,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "400 L",
             "Technology":          "OptiShift + Load-Sensing Hydraulics",
         },
-        "images": [
-            _wm("Volvo_L120F.jpg"),
-            _wm("Volvo_L150E_wheel_loader.jpg"),
-            _wm("Volvo_L180F_HL.jpg"),
-        ],
+        "images": _pick(LOADER_IMGS, 1, 2, 0),
         "schematics": [],
     },
 
@@ -555,11 +588,7 @@ MACHINES = [
             "Axles":               "5",
             "Outrigger Spread":    "8.2 × 8.0 m",
         },
-        "images": [
-            _wm("20100225-Liebherr_LTM_1200-5.jpg"),
-            _wm("Liebherr_LTM_1200-5.1.jpg"),
-            _wm("Liebherr_LTM_1500-8.1.jpg"),
-        ],
+        "images": _pick(CRANE_IMGS, 0, 1, 2),
         "schematics": [],
     },
     {
@@ -588,11 +617,7 @@ MACHINES = [
             "Track Width":         "1.2 m",
             "Control System":      "Manitowoc CCS",
         },
-        "images": [
-            _wm("Manitowoc_16000_crawler_crane.jpg"),
-            _wm("Manitowoc_18000_crawler_crane.jpg"),
-            _wm("Crawler_crane.jpg"),
-        ],
+        "images": _pick(CRANE_IMGS, 1, 2, 0),
         "schematics": [],
     },
 
@@ -624,11 +649,7 @@ MACHINES = [
             "Turning Radius":      "2,340 mm",
             "Safety System":       "Toyota SAS (Active Stability)",
         },
-        "images": [
-            _wm("Toyota_forklift_(model_5FD25).jpg"),
-            _wm("1956_Toyota_Model_LA_Forklift_01.jpg"),
-            _wm("Toyota_8FBN25.jpg"),
-        ],
+        "images": _pick(FORKLIFT_IMGS, 0, 1, 2),
         "schematics": [],
     },
     {
@@ -657,11 +678,7 @@ MACHINES = [
             "Turning Radius":      "2,350 mm",
             "Mast Type":           "Full Free Triple",
         },
-        "images": [
-            _wm("Caterpillar_forklift.jpg"),
-            _wm("Carretilla_elevadora_electrica.jpg"),
-            _wm("Forklift.jpg"),
-        ],
+        "images": _pick(FORKLIFT_IMGS, 3, 2, 0),
         "schematics": [],
     },
 
@@ -693,11 +710,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "227 L",
             "Wheel Arrangement":   "AWD Optional",
         },
-        "images": [
-            _wm("Caterpillar_140H_motor_grader.jpg"),
-            _wm("CAT_140M_AWD.jpg"),
-            _wm("Caterpillar_140G_grader.jpg"),
-        ],
+        "images": _pick(GRADER_IMGS, 0, 1, 2),
         "schematics": [],
     },
     {
@@ -726,11 +739,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "270 L",
             "Hydraulic System":    "Load-Sensing Variable Displacement",
         },
-        "images": [
-            _wm("Komatsu_GD655_grader.jpg"),
-            _wm("Komatsu_GD650A.JPG"),
-            _wm("Komatsu_GD825A_grader.jpg"),
-        ],
+        "images": _pick(GRADER_IMGS, 3, 2, 1),
         "schematics": [],
     },
 
@@ -762,11 +771,7 @@ MACHINES = [
             "Max Travel Speed":    "12.2 km/h",
             "Fuel Tank Capacity":  "180 L",
         },
-        "images": [
-            _wm("Caterpillar_CS-563_vibratory_soil_compactor.jpg"),
-            _wm("Road_roller.jpg"),
-            _wm("CCR1421B.jpg"),
-        ],
+        "images": _pick(ROLLER_IMGS, 0, 1, 2),
         "schematics": [],
     },
     {
@@ -795,11 +800,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "255 L",
             "Smart Technology":    "Bomag DRVMS",
         },
-        "images": [
-            _wm("Bomag_BW_213_DH.jpg"),
-            _wm("Bomag_roller.jpg"),
-            _wm("Road_roller.jpg"),
-        ],
+        "images": _pick(ROLLER_IMGS, 1, 2, 0),
         "schematics": [],
     },
 
@@ -831,11 +832,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "3,028 L",
             "Transmission":        "Automatic Planetary 7F/1R",
         },
-        "images": [
-            _wm("Cat777F.jpg"),
-            _wm("Caterpillar_777F_dump_truck.jpg"),
-            _wm("Caterpillar_785C_dump_truck.jpg"),
-        ],
+        "images": _pick(DUMPTRUCK_IMGS, 0, 1, 2),
         "schematics": [],
     },
     {
@@ -864,11 +861,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "3,240 L",
             "Monitoring System":   "Komatsu VHMS + Komtrax",
         },
-        "images": [
-            _wm("Komatsu_HD785-7_dump_truck.jpg"),
-            _wm("Komatsu_HD465-7_dump_truck.jpg"),
-            _wm("Komatsu_dump_truck.jpg"),
-        ],
+        "images": _pick(DUMPTRUCK_IMGS, 2, 3, 0),
         "schematics": [],
     },
 
@@ -901,11 +894,7 @@ MACHINES = [
             "Fuel Tank Capacity":  "68 L",
             "Lift Path":           "Vertical",
         },
-        "images": [
-            _wm("Caterpillar_262C_skid_steer_loader.jpg"),
-            _wm("Caterpillar_skid_steer_loader.jpg"),
-            _wm("Bobcat_skidsteer.jpg"),
-        ],
+        "images": _pick(SKID_IMGS, 1, 2, 0),
         "schematics": [],
     },
     {
@@ -934,10 +923,162 @@ MACHINES = [
             "Fuel Tank Capacity":  "95 L",
             "Auxiliary Hydraulics":"High-Flow (117 L/min)",
         },
+        "images": _pick(SKID_IMGS, 0, 1, 2),
+        "schematics": [],
+    },
+
+    # ── NEW: Cat D9 ─────────────────────────────────────────────────────────────
+
+    {
+        "id": 28,
+        "name": "Cat D9",
+        "category": "Bulldozer",
+        "manufacturer": "Caterpillar",
+        "model": "D9T",
+        "year": 2023,
+        "weight": 49000,
+        "horsepower": 436,
+        "description": (
+            "The Cat D9 is a legendary large-frame production bulldozer trusted "
+            "worldwide on mining, quarry, and heavy civil sites. The current D9T "
+            "is powered by a Cat C18 ACERT engine and features Cat's elevated "
+            "sprocket undercarriage for outstanding durability under the most "
+            "demanding conditions. With a Semi-Universal blade capacity of 16.4 m³, "
+            "the D9 delivers high productivity in long push and ripping applications."
+        ),
+        "technicalSpecs": {
+            "Engine Model":        "Cat C18 ACERT",
+            "Net Power":           "436 HP / 325 kW",
+            "Operating Weight":    "49,000 kg",
+            "Blade Capacity":      "16.4 m³ (Semi-U)",
+            "Max Blade Width":     "4,310 mm",
+            "Max Speed Forward":   "11.7 km/h",
+            "Ground Pressure":     "73 kPa",
+            "Fuel Tank Capacity":  "871 L",
+            "Ripper":              "Single / Multi-Shank Optional",
+        },
         "images": [
-            _wm("Bobcat_S770_skid_steer_loader.jpg"),
-            _wm("Bobcat_skidsteer.jpg"),
-            _wm("Bobcat_S250_Turbo_skid_steer_loader.jpg"),
+            _wm("Caterpillar_D9R.jpg"),
+            _wm("Caterpillar_D9.jpg"),
+            _wm("CatD11T.jpg"),  # confirmed fallback (same family)
+        ],
+        "schematics": [],
+    },
+
+    # ── NEW: IDF D9 (Armored / Military) ────────────────────────────────────────
+
+    {
+        "id": 29,
+        "name": "IDF D9 (\"Doobi\")",
+        "category": "Bulldozer",
+        "manufacturer": "Caterpillar / IDF",
+        "model": "D9R Armored",
+        "year": 2022,
+        "weight": 62000,
+        "horsepower": 410,
+        "description": (
+            "Armored military variant of the Cat D9R operated by the Israel "
+            "Defense Forces (Combat Engineering Corps), nicknamed \"Doobi\" "
+            "(Hebrew for \"teddy bear\"). Fitted with appliqué armor, ballistic "
+            "glass, slat armor, smoke launchers and remote-control kits, the IDF "
+            "D9 is purpose-built for combat-engineering tasks: route clearance, "
+            "obstacle breaching, fortified-position demolition and IED mitigation. "
+            "Operates at roughly 13 tonnes heavier than the civilian D9R thanks "
+            "to its protective package."
+        ),
+        "technicalSpecs": {
+            "Base Machine":        "Cat D9R",
+            "Engine Model":        "Cat 3408 / C18",
+            "Net Power":           "410 HP / 306 kW",
+            "Combat Weight":       "62,000 kg (with armor kit)",
+            "Armor":               "Appliqué + ballistic glass + slat armor",
+            "Crew":                "1 (manned) or 0 (remote-control variant)",
+            "Smoke System":        "Vehicle-mounted launchers",
+            "Operator":            "IDF Combat Engineering Corps",
+            "Configuration":       "Camouflage / Military",
+        },
+        "images": [
+            _wm("IDF_D9_bulldozer.jpg"),
+            _wm("IDF_Caterpillar_D9.jpg"),
+            _wm("Caterpillar_D9R.jpg"),
+        ],
+        "schematics": [],
+    },
+
+    # ── NEW: Cat 12H Motor Grader ───────────────────────────────────────────────
+
+    {
+        "id": 30,
+        "name": "Cat 12H",
+        "category": "Grader",
+        "manufacturer": "Caterpillar",
+        "model": "12H",
+        "year": 2018,
+        "weight": 13608,
+        "horsepower": 140,
+        "description": (
+            "The Cat 12H is a classic mid-size motor grader widely used by road "
+            "authorities and civil contractors for fine-grading, ditching, and "
+            "snow removal. Equipped with a Cat 3306 turbocharged engine and "
+            "Cat's well-proven direct-drive powershift transmission, the 12H "
+            "remains a benchmark for blade control, durability, and operator "
+            "comfort in its class. The 12H is the predecessor of the modern "
+            "140M / 140 GC series and is still common in fleets worldwide."
+        ),
+        "technicalSpecs": {
+            "Engine Model":        "Cat 3306 DITA",
+            "Net Power":           "140 HP / 104 kW",
+            "Operating Weight":    "13,608 kg",
+            "Blade Length":        "3,658 mm",
+            "Blade Height":        "610 mm",
+            "Max Blade Sideshift": "660 mm (each side)",
+            "Max Gradeability":    "30%",
+            "Fuel Tank Capacity":  "284 L",
+            "Transmission":        "Direct-Drive Powershift 8F/4R",
+        },
+        "images": [
+            _wm("Caterpillar_12H_Motor_Grader.jpg"),
+            _wm("Caterpillar_12H_grader.jpg"),
+            _wm("CAT_140H_(50322703832).jpg"),  # confirmed fallback
+        ],
+        "schematics": [],
+    },
+
+    # ── NEW: Cat 432F Backhoe Loader ────────────────────────────────────────────
+
+    {
+        "id": 31,
+        "name": "Cat 432F",
+        "category": "Backhoe",
+        "manufacturer": "Caterpillar",
+        "model": "432F2",
+        "year": 2022,
+        "weight": 8650,
+        "horsepower": 93,
+        "description": (
+            "The Cat 432F is a centre-pivot backhoe loader popular across "
+            "Europe for utility, municipal, and general construction work. "
+            "Featuring side-shift backhoe geometry, parallel-lift loader "
+            "linkage and a Cat C4.4 ACERT engine, the 432F delivers high "
+            "breakout force and excellent fuel economy. The pressurised cab, "
+            "automatic powershift transmission and pilot-operated joystick "
+            "controls keep operators productive through long shifts."
+        ),
+        "technicalSpecs": {
+            "Engine Model":        "Cat C4.4 ACERT",
+            "Net Power":           "93 HP / 69.3 kW",
+            "Operating Weight":    "8,650 kg",
+            "Max Dig Depth":       "5,892 mm",
+            "Max Reach at Ground": "6,667 mm",
+            "Loader Lift Capacity":"3,600 kg",
+            "Bucket Rotation":     "200°",
+            "Fuel Tank Capacity":  "160 L",
+            "Configuration":       "Centre-Pivot / Side-Shift Backhoe",
+        },
+        "images": [
+            _wm("Caterpillar_432F_backhoe_loader.jpg"),
+            _wm("Caterpillar_432E_backhoe_loader.jpg"),
+            _wm("Caterpillar_backhoe_loader_at_construction_site_in_Sunnyvale.jpg"),
         ],
         "schematics": [],
     },
