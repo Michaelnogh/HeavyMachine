@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SafeImage from './SafeImage'
 import styles from './ImageGallery.module.css'
 
 export default function ImageGallery({ images, machineName }) {
@@ -11,10 +12,12 @@ export default function ImageGallery({ images, machineName }) {
     <div className={styles.gallery}>
       {/* Main large image */}
       <div className={styles.mainWrap}>
-        <img
+        <SafeImage
           src={images[activeIndex]}
           alt={`${machineName} — image ${activeIndex + 1}`}
           className={styles.mainImage}
+          fallbackLabel={machineName}
+          loading="eager"
         />
         {/* Counter badge */}
         <span className={styles.counter}>
@@ -23,18 +26,24 @@ export default function ImageGallery({ images, machineName }) {
       </div>
 
       {/* Thumbnail strip */}
-      <div className={styles.thumbs}>
-        {images.map((src, i) => (
-          <button
-            key={i}
-            className={`${styles.thumb} ${i === activeIndex ? styles.thumbActive : ''}`}
-            onClick={() => setActiveIndex(i)}
-            aria-label={`Show image ${i + 1}`}
-          >
-            <img src={src} alt={`Thumbnail ${i + 1}`} />
-          </button>
-        ))}
-      </div>
+      {images.length > 1 && (
+        <div className={styles.thumbs}>
+          {images.map((src, i) => (
+            <button
+              key={i}
+              className={`${styles.thumb} ${i === activeIndex ? styles.thumbActive : ''}`}
+              onClick={() => setActiveIndex(i)}
+              aria-label={`Show image ${i + 1}`}
+            >
+              <SafeImage
+                src={src}
+                alt={`${machineName} thumbnail ${i + 1}`}
+                fallbackLabel={machineName}
+              />
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

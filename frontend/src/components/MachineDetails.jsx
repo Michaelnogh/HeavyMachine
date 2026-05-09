@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
 import ImageGallery from './ImageGallery'
 import SpecsTable from './SpecsTable'
+import SafeImage from './SafeImage'
 import styles from './MachineDetails.module.css'
 
-export default function MachineDetails({ machine, onClose }) {
+export default function MachineDetails({ machine, onClose, isFavorite, onToggleFavorite }) {
   // Close modal when Escape key is pressed
   useEffect(() => {
     const handleKey = (e) => {
@@ -34,9 +35,21 @@ export default function MachineDetails({ machine, onClose }) {
               {machine.model} · {machine.year} · {machine.category}
             </span>
           </div>
-          <button className={styles.closeBtn} onClick={onClose} aria-label="Close">
-            ✕
-          </button>
+          <div className={styles.headerActions}>
+            {onToggleFavorite && (
+              <button
+                className={`${styles.favBtn} ${isFavorite ? styles.favActive : ''}`}
+                onClick={() => onToggleFavorite(machine.id)}
+                aria-pressed={isFavorite}
+                title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+              >
+                {isFavorite ? '♥ Saved' : '♡ Save'}
+              </button>
+            )}
+            <button className={styles.closeBtn} onClick={onClose} aria-label="Close">
+              ✕
+            </button>
+          </div>
         </div>
 
         {/* ── Scrollable content ── */}
@@ -77,17 +90,18 @@ export default function MachineDetails({ machine, onClose }) {
             <SpecsTable specs={machine.technicalSpecs} />
           </section>
 
-          {/* Schematics */}
+          {/* Schematics — only shown if any are provided */}
           {machine.schematics && machine.schematics.length > 0 && (
             <section className={styles.section}>
               <h3 className={styles.sectionTitle}>Schematics</h3>
               <div className={styles.schematics}>
                 {machine.schematics.map((src, i) => (
                   <div key={i} className={styles.schematicWrap}>
-                    <img
+                    <SafeImage
                       src={src}
                       alt={`${machine.name} schematic ${i + 1}`}
                       className={styles.schematicImg}
+                      fallbackLabel={`${machine.name} schematic`}
                     />
                     <span className={styles.schematicLabel}>
                       {i === 0 ? 'Side Profile' : 'Dimensions'}

@@ -44,8 +44,76 @@
   text-transform: uppercase;
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.favToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1.5px solid #444;
+  background: transparent;
+  color: #ddd;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.favToggle:hover {
+  border-color: var(--cat-yellow);
+  color: #fff;
+}
+
+.favToggleActive {
+  background: var(--cat-yellow);
+  color: var(--cat-black);
+  border-color: var(--cat-yellow);
+}
+
+.favIcon {
+  font-size: 1.05rem;
+  color: #e91e63;
+  line-height: 1;
+}
+
+.favToggleActive .favIcon {
+  color: #c2185b;
+}
+
+.favLabel {
+  letter-spacing: 0.3px;
+}
+
+.favCount {
+  background: rgba(255, 255, 255, 0.18);
+  color: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  min-width: 22px;
+  text-align: center;
+}
+
+.favToggleActive .favCount {
+  background: rgba(0, 0, 0, 0.18);
+}
+
 .brand {
   text-align: right;
+}
+
+@media (max-width: 600px) {
+  .inner { padding: 0 14px; height: 60px; }
+  .logoSub, .brandSub { display: none; }
+  .favLabel { display: none; }
+  .actions { gap: 10px; }
 }
 
 .brandBadge {

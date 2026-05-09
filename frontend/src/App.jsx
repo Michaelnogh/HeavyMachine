@@ -4,6 +4,7 @@ import CategoryFilter from './components/CategoryFilter'
 import SearchBar from './components/SearchBar'
 import MachineCard from './components/MachineCard'
 import MachineDetails from './components/MachineDetails'
+import useFavorites from './useFavorites'
 import styles from './App.module.css'
 
 const API = '/api'
@@ -18,9 +19,13 @@ export default function App() {
   // Filter / search state (all handled client-side for simplicity)
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [searchQuery, setSearchQuery]           = useState('')
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false)
 
   // The machine currently open in the details modal (null = closed)
   const [selectedMachine, setSelectedMachine]   = useState(null)
+
+  // Favorites state (persisted to localStorage)
+  const { isFavorite, toggleFavorite, count: favCount } = useFavorites()
 
   // Fetch categories list
   useEffect(() => {
@@ -49,7 +54,7 @@ export default function App() {
       })
   }, [])
 
-  // Client-side filtering: apply category filter then search query
+  // Client-side filtering: category, search query, then favorites filter
   const visibleMachines = allMachines
     .filter((m) => !selectedCategory || m.category === selectedCategory)
     .filter((m) => {
@@ -60,10 +65,15 @@ export default function App() {
         m.manufacturer.toLowerCase().includes(q)
       )
     })
+    .filter((m) => !showFavoritesOnly || isFavorite(m.id))
 
   return (
     <div className={styles.app}>
-      <Header />
+      <Header
+        favoritesCount={favCount}
+        showFavoritesOnly={showFavoritesOnly}
+        onToggleFavorites={() => setShowFavoritesOnly((v) => !v)}
+      />
 
       {/* Category filter bar */}
       <CategoryFilter
@@ -100,10 +110,18 @@ export default function App() {
         {/* Empty state */}
         {!loading && !error && visibleMachines.length === 0 && (
           <div className={styles.center}>
-            <p>No machines match your search.</p>
+            <p>
+              {showFavoritesOnly && favCount === 0
+                ? 'You have no favorite machines yet. Tap the ♡ on any card to add one.'
+                : 'No machines match your search.'}
+            </p>
             <button
               className={styles.clearBtn}
-              onClick={() => { setSelectedCategory(null); setSearchQuery('') }}
+              onClick={() => {
+                setSelectedCategory(null)
+                setSearchQuery('')
+                setShowFavoritesOnly(false)
+              }}
             >
               Clear filters
             </button>
@@ -118,6 +136,8 @@ export default function App() {
                 key={m.id}
                 machine={m}
                 onViewDetails={() => setSelectedMachine(m)}
+                isFavorite={isFavorite(m.id)}
+                onToggleFavorite={toggleFavorite}
               />
             ))}
           </div>
@@ -133,6 +153,8 @@ export default function App() {
         <MachineDetails
           machine={selectedMachine}
           onClose={() => setSelectedMachine(null)}
+          isFavorite={isFavorite(selectedMachine.id)}
+          onToggleFavorite={toggleFavorite}
         />
       )}
     </div>

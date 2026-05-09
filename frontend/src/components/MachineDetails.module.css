@@ -68,6 +68,44 @@
   color: #888;
 }
 
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.favBtn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #ddd;
+  padding: 6px 14px;
+  border-radius: 18px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.favBtn:hover {
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  border-color: #e91e63;
+}
+
+.favActive {
+  background: #e91e63;
+  border-color: #e91e63;
+  color: #fff;
+}
+
+.favActive:hover {
+  background: #c2185b;
+  border-color: #c2185b;
+  color: #fff;
+}
+
 .closeBtn {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255,255,255,0.15);

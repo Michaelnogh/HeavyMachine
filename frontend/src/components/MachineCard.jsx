@@ -1,3 +1,4 @@
+import SafeImage from './SafeImage'
 import styles from './MachineCard.module.css'
 
 // A distinct badge colour for each category
@@ -16,24 +17,32 @@ const CATEGORY_COLOR = {
   'Skid Steer': '#00695c',
 }
 
-export default function MachineCard({ machine, onViewDetails }) {
+export default function MachineCard({ machine, onViewDetails, isFavorite, onToggleFavorite }) {
   const badgeColor = CATEGORY_COLOR[machine.category] ?? '#555'
-  // Use the first image as the card thumbnail
-  const thumbnail = machine.images?.[0] ?? 'https://placehold.co/400x260/ccc/555?text=No+Image'
+  const thumbnail  = machine.images?.[0]
 
   return (
     <article className={styles.card}>
-      {/* Image + category badge */}
+      {/* Image + category badge + favorite button */}
       <div className={styles.imageWrap}>
-        <img
+        <SafeImage
           src={thumbnail}
           alt={machine.name}
           className={styles.image}
-          loading="lazy"
+          fallbackLabel={machine.name}
         />
         <span className={styles.categoryBadge} style={{ background: badgeColor }}>
           {machine.category}
         </span>
+        <button
+          className={`${styles.favBtn} ${isFavorite ? styles.favActive : ''}`}
+          onClick={(e) => { e.stopPropagation(); onToggleFavorite?.(machine.id) }}
+          aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+          aria-pressed={isFavorite}
+          title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+        >
+          {isFavorite ? '♥' : '♡'}
+        </button>
       </div>
 
       {/* Card body */}
