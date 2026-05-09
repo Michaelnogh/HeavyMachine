@@ -33,9 +33,9 @@ MACHINES = [
             "Drive System":        "Electric Drive (XE)",
         },
         "images": [
-            "https://placehold.co/800x500/F4A820/1A1A1A?text=Cat+D6+XE+Front",
-            "https://placehold.co/800x500/1A1A1A/F4A820?text=Cat+D6+XE+Side",
-            "https://placehold.co/800x500/2d2d2d/F4A820?text=Cat+D6+XE+Cab+Detail",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Caterpillar_D6_bulldozer_VA2.jpg/800px-Caterpillar_D6_bulldozer_VA2.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Caterpillar_D6_bulldozer_VA1.jpg/800px-Caterpillar_D6_bulldozer_VA1.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Caterpillar_D6_bulldozer_VA3.jpg/800px-Caterpillar_D6_bulldozer_VA3.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=D6+XE+Side+Profile",
@@ -69,9 +69,9 @@ MACHINES = [
             "Transmission":        "Powershift 3F/3R",
         },
         "images": [
-            "https://placehold.co/800x500/F4A820/1A1A1A?text=Cat+D8+Front",
-            "https://placehold.co/800x500/1A1A1A/F4A820?text=Cat+D8+Side",
-            "https://placehold.co/800x500/2d2d2d/F4A820?text=Cat+D8+Undercarriage",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/McLean_Mill_Caterpillar.jpg/800px-McLean_Mill_Caterpillar.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Cabless_Cat_D8.jpg/800px-Cabless_Cat_D8.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/D8_%2840345297103%29.jpg/800px-D8_%2840345297103%29.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=D8+Side+Profile",
@@ -105,9 +105,9 @@ MACHINES = [
             "Track Gauge":         "2,895 mm",
         },
         "images": [
-            "https://placehold.co/800x500/F4A820/1A1A1A?text=Cat+D11+Front",
-            "https://placehold.co/800x500/1A1A1A/F4A820?text=Cat+D11+Side",
-            "https://placehold.co/800x500/2d2d2d/F4A820?text=Cat+D11+Mining+Site",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/CatD11T.jpg/800px-CatD11T.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Cat_D11_View_2.jpg/800px-Cat_D11_View_2.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/CatD11T_part.jpg/800px-CatD11T_part.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=D11+Side+Profile",
@@ -144,9 +144,9 @@ MACHINES = [
             "Hydraulic Flow":      "2 × 200 L/min",
         },
         "images": [
-            "https://placehold.co/800x500/F4A820/1A1A1A?text=Cat+320+Front",
-            "https://placehold.co/800x500/1A1A1A/F4A820?text=Cat+320+Side",
-            "https://placehold.co/800x500/2d2d2d/F4A820?text=Cat+320+Boom+Detail",
+            "https://upload.wikimedia.org/wikipedia/commons/8/8c/CAT_320.excavator.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Caterpillar_330_excavator_on_a_pile_of_dirt.jpg/800px-Caterpillar_330_excavator_on_a_pile_of_dirt.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Caterpillar_330_Excavator.jpg/800px-Caterpillar_330_Excavator.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=320+Side+Profile",
@@ -180,9 +180,9 @@ MACHINES = [
             "Hydraulic Flow":      "2 × 330 L/min",
         },
         "images": [
-            "https://placehold.co/800x500/F4A820/1A1A1A?text=Cat+340+Front",
-            "https://placehold.co/800x500/1A1A1A/F4A820?text=Cat+340+Side",
-            "https://placehold.co/800x500/2d2d2d/F4A820?text=Cat+340+Working",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Caterpillar_330_excavator_on_a_pile_of_dirt.jpg/800px-Caterpillar_330_excavator_on_a_pile_of_dirt.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Caterpillar_330_Excavator.jpg/800px-Caterpillar_330_Excavator.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/2009_07_12_Travaux_A75_%281%29.jpg/800px-2009_07_12_Travaux_A75_%281%29.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=340+Side+Profile",
@@ -216,9 +216,9 @@ MACHINES = [
             "Hydraulic Flow":      "2 × 520 L/min",
         },
         "images": [
-            "https://placehold.co/800x500/F4A820/1A1A1A?text=Cat+395+Front",
-            "https://placehold.co/800x500/1A1A1A/F4A820?text=Cat+395+Side",
-            "https://placehold.co/800x500/2d2d2d/F4A820?text=Cat+395+Quarry",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/20210207_Bergehalde_Lydia_01.jpg/800px-20210207_Bergehalde_Lydia_01.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Caterpillar_330_Excavator.jpg/800px-Caterpillar_330_Excavator.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/8/8c/CAT_320.excavator.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=395+Side+Profile",
@@ -255,9 +255,9 @@ MACHINES = [
             "Transmission":        "Electro-Hydraulic Powershift",
         },
         "images": [
-            "https://placehold.co/800x500/F4A820/1A1A1A?text=Cat+420+Front",
-            "https://placehold.co/800x500/1A1A1A/F4A820?text=Cat+420+Side",
-            "https://placehold.co/800x500/2d2d2d/F4A820?text=Cat+420+Bucket",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/CAT_420F_IT_-_Arlington%2C_MA_-_DSC04086.JPG/800px-CAT_420F_IT_-_Arlington%2C_MA_-_DSC04086.JPG",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Caterpillar_backhoe_loader_at_construction_site_in_Sunnyvale.jpg/800px-Caterpillar_backhoe_loader_at_construction_site_in_Sunnyvale.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Excavadora.jpg/800px-Excavadora.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=420+Side+Profile",
@@ -291,9 +291,9 @@ MACHINES = [
             "Transmission":        "Electro-Hydraulic Powershift",
         },
         "images": [
-            "https://placehold.co/800x500/F4A820/1A1A1A?text=Cat+430+Front",
-            "https://placehold.co/800x500/1A1A1A/F4A820?text=Cat+430+Side",
-            "https://placehold.co/800x500/2d2d2d/F4A820?text=Cat+430+Loader",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Caterpillar_backhoe_loader_at_construction_site_in_Sunnyvale.jpg/800px-Caterpillar_backhoe_loader_at_construction_site_in_Sunnyvale.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/CAT_brand_backhoe_loader.jpg/800px-CAT_brand_backhoe_loader.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Excavadora.jpg/800px-Excavadora.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=430+Side+Profile",
@@ -327,9 +327,9 @@ MACHINES = [
             "Technology":          "Cat Connect Grade Control",
         },
         "images": [
-            "https://placehold.co/800x500/F4A820/1A1A1A?text=Cat+450+Front",
-            "https://placehold.co/800x500/1A1A1A/F4A820?text=Cat+450+Side",
-            "https://placehold.co/800x500/2d2d2d/F4A820?text=Cat+450+Grade+Control",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/CAT_brand_backhoe_loader.jpg/800px-CAT_brand_backhoe_loader.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/CAT_420F_IT_-_Arlington%2C_MA_-_DSC04086.JPG/800px-CAT_420F_IT_-_Arlington%2C_MA_-_DSC04086.JPG",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Back_hoe_work_130731-F-QT982-322.jpg/800px-Back_hoe_work_130731-F-QT982-322.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=450+Side+Profile",
@@ -366,9 +366,9 @@ MACHINES = [
             "Auxiliary Hydraulics":"High-Flow Optional",
         },
         "images": [
-            "https://placehold.co/800x500/D84315/FFFFFF?text=Bobcat+E35+Front",
-            "https://placehold.co/800x500/1A1A1A/FF5722?text=Bobcat+E35+Side",
-            "https://placehold.co/800x500/2d2d2d/FF5722?text=Bobcat+E35+Detail",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bobcat_skidsteer.jpg/800px-Bobcat_skidsteer.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/2013_Construction_Day_-_Driving_a_bobcat_%288777588230%29.jpg/800px-2013_Construction_Day_-_Driving_a_bobcat_%288777588230%29.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/U25.jpg/800px-U25.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=E35+Side+Profile",
@@ -402,9 +402,9 @@ MACHINES = [
             "Lift Path":           "Vertical",
         },
         "images": [
-            "https://placehold.co/800x500/D84315/FFFFFF?text=Bobcat+T86+Front",
-            "https://placehold.co/800x500/1A1A1A/FF5722?text=Bobcat+T86+Side",
-            "https://placehold.co/800x500/2d2d2d/FF5722?text=Bobcat+T86+Detail",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bobcat_skidsteer.jpg/800px-Bobcat_skidsteer.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/ASV_PT-80_loader.jpg/800px-ASV_PT-80_loader.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/2013_Construction_Day_-_Driving_a_bobcat_%288777588230%29.jpg/800px-2013_Construction_Day_-_Driving_a_bobcat_%288777588230%29.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=T86+Side+Profile",
@@ -441,9 +441,9 @@ MACHINES = [
             "Undercarriage":       "Retractable (1,550–1,990 mm)",
         },
         "images": [
-            "https://placehold.co/800x500/1B5E20/FFFFFF?text=Kubota+KX040+Front",
-            "https://placehold.co/800x500/1A1A1A/66BB6A?text=Kubota+KX040+Side",
-            "https://placehold.co/800x500/2d2d2d/66BB6A?text=Kubota+KX040+Detail",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/U25.jpg/800px-U25.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Airman_AX33u_excavator_R01.jpg/800px-Airman_AX33u_excavator_R01.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Amman-Yanmar_compact_excavator_in_Finland.jpg/800px-Amman-Yanmar_compact_excavator_in_Finland.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=KX040+Side+Profile",
@@ -477,9 +477,9 @@ MACHINES = [
             "Track Width":         "230 mm (rubber)",
         },
         "images": [
-            "https://placehold.co/800x500/F4A820/1A1A1A?text=Cat+301.7+Front",
-            "https://placehold.co/800x500/1A1A1A/F4A820?text=Cat+301.7+Side",
-            "https://placehold.co/800x500/2d2d2d/F4A820?text=Cat+301.7+Detail",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Airman_AX33u_excavator_R01.jpg/800px-Airman_AX33u_excavator_R01.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/2008-07-14_Deere_35C_excavator.jpg/800px-2008-07-14_Deere_35C_excavator.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/U25.jpg/800px-U25.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=301.7+Side+Profile",
@@ -516,9 +516,9 @@ MACHINES = [
             "Transmission":        "Cat Automatic 4F/3R",
         },
         "images": [
-            "https://placehold.co/800x500/F4A820/1A1A1A?text=Cat+950+GC+Front",
-            "https://placehold.co/800x500/1A1A1A/F4A820?text=Cat+950+GC+Side",
-            "https://placehold.co/800x500/2d2d2d/F4A820?text=Cat+950+GC+Bucket",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/CAT_928F_and_416B_4x4_Turbo_-_Arlington%2C_MA_-_DSC03887.JPG/800px-CAT_928F_and_416B_4x4_Turbo_-_Arlington%2C_MA_-_DSC03887.JPG",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Caterpillar_966F_Wheel_Loader.jpg/800px-Caterpillar_966F_Wheel_Loader.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Caterpillar_backhoe_loader_at_construction_site_in_Sunnyvale.jpg/800px-Caterpillar_backhoe_loader_at_construction_site_in_Sunnyvale.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=950+GC+Side+Profile",
@@ -552,9 +552,9 @@ MACHINES = [
             "Technology":          "OptiShift + Load-Sensing Hydraulics",
         },
         "images": [
-            "https://placehold.co/800x500/1565C0/FFFFFF?text=Volvo+L120H+Front",
-            "https://placehold.co/800x500/1A1A1A/42A5F5?text=Volvo+L120H+Side",
-            "https://placehold.co/800x500/2d2d2d/42A5F5?text=Volvo+L120H+Bucket",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Volvo_L120F_%281%29.jpg/800px-Volvo_L120F_%281%29.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Volvo_L180F_HL.jpg/800px-Volvo_L180F_HL.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/CAT_928F_and_416B_4x4_Turbo_-_Arlington%2C_MA_-_DSC03887.JPG/800px-CAT_928F_and_416B_4x4_Turbo_-_Arlington%2C_MA_-_DSC03887.JPG",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=L120H+Side+Profile",
@@ -591,9 +591,9 @@ MACHINES = [
             "Outrigger Spread":    "8.2 × 8.0 m",
         },
         "images": [
-            "https://placehold.co/800x500/B71C1C/FFFFFF?text=Liebherr+LTM+1200+Front",
-            "https://placehold.co/800x500/1A1A1A/EF5350?text=Liebherr+LTM+1200+Boom",
-            "https://placehold.co/800x500/2d2d2d/EF5350?text=Liebherr+LTM+1200+Cab",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/20100225-Liebherr_LTM_1200-5.jpg/800px-20100225-Liebherr_LTM_1200-5.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Liebherr_LTM_1200-5.1_%2853401824774%29.jpg/800px-Liebherr_LTM_1200-5.1_%2853401824774%29.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Liebherr_-_Kran_LTM_1500-8.1_%28b%29.JPG/800px-Liebherr_-_Kran_LTM_1500-8.1_%28b%29.JPG",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=LTM+1200+Side+Profile",
@@ -627,9 +627,9 @@ MACHINES = [
             "Control System":      "Manitowoc CCS",
         },
         "images": [
-            "https://placehold.co/800x500/37474F/FFFFFF?text=Manitowoc+16000+Front",
-            "https://placehold.co/800x500/1A1A1A/90A4AE?text=Manitowoc+16000+Boom",
-            "https://placehold.co/800x500/2d2d2d/90A4AE?text=Manitowoc+16000+Detail",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/A_huge_mobile_crane_building_a_school_in_Jordbro.jpg/800px-A_huge_mobile_crane_building_a_school_in_Jordbro.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Collett_Take_Ownership.jpg/800px-Collett_Take_Ownership.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Collett%27s_Effer_2055.jpg/800px-Collett%27s_Effer_2055.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=16000+Side+Profile",
@@ -666,9 +666,9 @@ MACHINES = [
             "Safety System":       "Toyota SAS (Active Stability)",
         },
         "images": [
-            "https://placehold.co/800x500/E65100/FFFFFF?text=Toyota+8FBN25+Front",
-            "https://placehold.co/800x500/1A1A1A/FF6D00?text=Toyota+8FBN25+Side",
-            "https://placehold.co/800x500/2d2d2d/FF6D00?text=Toyota+8FBN25+Mast",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/1956_Toyota_Model_LA_Forklift_01.jpg/800px-1956_Toyota_Model_LA_Forklift_01.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/1956_Toyota_Model_LA_Forklift_02.jpg/800px-1956_Toyota_Model_LA_Forklift_02.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/20140410_argostoli232.JPG/800px-20140410_argostoli232.JPG",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=8FBN25+Side+Profile",
@@ -702,9 +702,9 @@ MACHINES = [
             "Mast Type":           "Full Free Triple",
         },
         "images": [
-            "https://placehold.co/800x500/F4A820/1A1A1A?text=Cat+GP25N+Front",
-            "https://placehold.co/800x500/1A1A1A/F4A820?text=Cat+GP25N+Side",
-            "https://placehold.co/800x500/2d2d2d/F4A820?text=Cat+GP25N+Mast",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Printing_houses_in_Tehran_-_11_March_2013_04.jpg/800px-Printing_houses_in_Tehran_-_11_March_2013_04.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Carretilla_elevadora_electrica.jpg/800px-Carretilla_elevadora_electrica.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/4FD_med.jpg/800px-4FD_med.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=GP25N+Side+Profile",
@@ -741,9 +741,9 @@ MACHINES = [
             "Wheel Arrangement":   "AWD Optional",
         },
         "images": [
-            "https://placehold.co/800x500/F4A820/1A1A1A?text=Cat+140+GC+Front",
-            "https://placehold.co/800x500/1A1A1A/F4A820?text=Cat+140+GC+Side",
-            "https://placehold.co/800x500/2d2d2d/F4A820?text=Cat+140+GC+Blade",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/CAT_140H_%2850322703832%29.jpg/800px-CAT_140H_%2850322703832%29.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/CAT_140M_AWD.jpg/800px-CAT_140M_AWD.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/CAT_140M3_%2851633404813%29.jpg/800px-CAT_140M3_%2851633404813%29.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=140+GC+Side+Profile",
@@ -777,9 +777,9 @@ MACHINES = [
             "Hydraulic System":    "Load-Sensing Variable Displacement",
         },
         "images": [
-            "https://placehold.co/800x500/F57F17/1A1A1A?text=Komatsu+GD655+Front",
-            "https://placehold.co/800x500/1A1A1A/FFB300?text=Komatsu+GD655+Side",
-            "https://placehold.co/800x500/2d2d2d/FFB300?text=Komatsu+GD655+Blade",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Komatsu_GD655_grader_%2811815425133%29.jpg/800px-Komatsu_GD655_grader_%2811815425133%29.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Komatsu_GD650A_grader_%2812679464615%29.jpg/800px-Komatsu_GD650A_grader_%2812679464615%29.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Komatsu_GD650A.JPG/800px-Komatsu_GD650A.JPG",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=GD655+Side+Profile",
@@ -816,9 +816,9 @@ MACHINES = [
             "Fuel Tank Capacity":  "180 L",
         },
         "images": [
-            "https://placehold.co/800x500/F4A820/1A1A1A?text=Cat+CS11+GC+Front",
-            "https://placehold.co/800x500/1A1A1A/F4A820?text=Cat+CS11+GC+Side",
-            "https://placehold.co/800x500/2d2d2d/F4A820?text=Cat+CS11+GC+Drum",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Road_roller_ride-on_articulating-swivel_small_01.jpg/800px-Road_roller_ride-on_articulating-swivel_small_01.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/CCR1421B.jpg/800px-CCR1421B.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Asphalt_Roller_for_Road_Asphalt_Paving_Odos_Afstralias_Rhodes_4_August_2025.jpg/800px-Asphalt_Roller_for_Road_Asphalt_Paving_Odos_Afstralias_Rhodes_4_August_2025.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=CS11+GC+Profile",
@@ -852,9 +852,9 @@ MACHINES = [
             "Smart Technology":    "Bomag DRVMS",
         },
         "images": [
-            "https://placehold.co/800x500/C62828/FFFFFF?text=Bomag+BW213+Front",
-            "https://placehold.co/800x500/1A1A1A/EF5350?text=Bomag+BW213+Side",
-            "https://placehold.co/800x500/2d2d2d/EF5350?text=Bomag+BW213+Drum",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/CCR1421B.jpg/800px-CCR1421B.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Road_roller_ride-on_articulating-swivel_small_01.jpg/800px-Road_roller_ride-on_articulating-swivel_small_01.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Asphalt_Roller_for_Road_Asphalt_Paving_Odos_Afstralias_Rhodes_4_August_2025.jpg/800px-Asphalt_Roller_for_Road_Asphalt_Paving_Odos_Afstralias_Rhodes_4_August_2025.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=BW213+Profile",
@@ -891,9 +891,9 @@ MACHINES = [
             "Transmission":        "Automatic Planetary 7F/1R",
         },
         "images": [
-            "https://placehold.co/800x500/F4A820/1A1A1A?text=Cat+777G+Front",
-            "https://placehold.co/800x500/1A1A1A/F4A820?text=Cat+777G+Side",
-            "https://placehold.co/800x500/2d2d2d/F4A820?text=Cat+777G+Dumping",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Cat777F.jpg/800px-Cat777F.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Caterpillar_777F_dump_truck_%28cropped%29.jpg/800px-Caterpillar_777F_dump_truck_%28cropped%29.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Caterpillar_777F_dump_truck.jpg/800px-Caterpillar_777F_dump_truck.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=777G+Side+Profile",
@@ -927,9 +927,9 @@ MACHINES = [
             "Monitoring System":   "Komatsu VHMS + Komtrax",
         },
         "images": [
-            "https://placehold.co/800x500/F57F17/1A1A1A?text=Komatsu+HD785+Front",
-            "https://placehold.co/800x500/1A1A1A/FFB300?text=Komatsu+HD785+Side",
-            "https://placehold.co/800x500/2d2d2d/FFB300?text=Komatsu+HD785+Bed",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Industrielastwagen-Slite-Filehajdar-Gotland-2010_01.jpg/800px-Industrielastwagen-Slite-Filehajdar-Gotland-2010_01.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Industrielastwagen-Slite-Filehajdar-Gotland-2010_02.jpg/800px-Industrielastwagen-Slite-Filehajdar-Gotland-2010_02.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Industrielastwagen-Slite-Filehajdar-Gotland-2010_03.jpg/800px-Industrielastwagen-Slite-Filehajdar-Gotland-2010_03.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=HD785+Side+Profile",
@@ -967,9 +967,9 @@ MACHINES = [
             "Lift Path":           "Vertical",
         },
         "images": [
-            "https://placehold.co/800x500/F4A820/1A1A1A?text=Cat+262D3+Front",
-            "https://placehold.co/800x500/1A1A1A/F4A820?text=Cat+262D3+Side",
-            "https://placehold.co/800x500/2d2d2d/F4A820?text=Cat+262D3+Bucket",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/2009-02-23_Skid_steer_with_extreme_duty_auger.jpg/800px-2009-02-23_Skid_steer_with_extreme_duty_auger.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bobcat_skidsteer.jpg/800px-Bobcat_skidsteer.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/ASV_PT-80_loader.jpg/800px-ASV_PT-80_loader.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=262D3+Side+Profile",
@@ -1003,9 +1003,9 @@ MACHINES = [
             "Auxiliary Hydraulics":"High-Flow (117 L/min)",
         },
         "images": [
-            "https://placehold.co/800x500/D84315/FFFFFF?text=Bobcat+S770+Front",
-            "https://placehold.co/800x500/1A1A1A/FF5722?text=Bobcat+S770+Side",
-            "https://placehold.co/800x500/2d2d2d/FF5722?text=Bobcat+S770+Bucket",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bobcat_skidsteer.jpg/800px-Bobcat_skidsteer.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/2013_Construction_Day_-_Driving_a_bobcat_%288777588230%29.jpg/800px-2013_Construction_Day_-_Driving_a_bobcat_%288777588230%29.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/2009-02-23_Skid_steer_with_extreme_duty_auger.jpg/800px-2009-02-23_Skid_steer_with_extreme_duty_auger.jpg",
         ],
         "schematics": [
             "https://placehold.co/900x600/0d1b2a/7ab8f5?text=S770+Side+Profile",
